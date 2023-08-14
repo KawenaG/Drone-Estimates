@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drone Service Estimate</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline styles if needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Draw a Grid on the Property</h1>
+        <input id="addressInput" type="text" placeholder="Search for address">
+        <div id="map"></div>
+        <p id="area">Area: 0 sq feet</p>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <input type="hidden" id="areaInput" name="area">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgy_vBhUnEUjUkfwxsaf1dPICNFDB7Mk&libraries=drawing,places&callback=initMap"></script>
+</body>
+</html>

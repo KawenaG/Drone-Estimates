@@ -1,53 +1,55 @@
 let map;
-let drawingManager;
+let currentPolygon;
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 37.7749, lng: -122.4194}, // Default to San Francisco, adjust as needed
-    zoom: 10,
+  const center = { lat: 37.7749, lng: -122.4194 };
+
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: center,
+    zoom: 13,
   });
 
-  drawingManager = new google.maps.drawing.DrawingManager({
+  const geocoder = new google.maps.Geocoder();
+  document.getElementById("searchButton").addEventListener("click", () => {
+    geocodeAddress(geocoder, map);
+  });
+
+  const drawingManager = new google.maps.drawing.DrawingManager({
     drawingMode: google.maps.drawing.OverlayType.POLYGON,
     drawingControl: true,
     drawingControlOptions: {
       position: google.maps.ControlPosition.TOP_CENTER,
-      drawingModes: ['polygon']
+      drawingModes: ["polygon"],
     },
-    polygonOptions: {
-      editable: true,
-      draggable: true
-    }
   });
+
   drawingManager.setMap(map);
 
-  google.maps.event.addListener(drawingManager, 'overlaycomplete', function(e) {
-    if (e.type === 'polygon') {
+  google.maps.event.addListener(drawingManager, "overlaycomplete", function (e) {
+    if (e.type === "polygon") {
+      if (currentPolygon) {
+        currentPolygon.setMap(null);
+      }
+      currentPolygon = e.overlay;
       let path = e.overlay.getPath();
       let areaInMeters = google.maps.geometry.spherical.computeArea(path);
       let areaInFeet = areaInMeters * 10.764;
-      document.getElementById('area').innerHTML = `Area: ${areaInFeet.toFixed(2)} sq feet`;
+      document.getElementById("area").innerHTML = `Area: ${areaInFeet.toFixed(2)} sq feet`;
     }
   });
+}
 
-  // Search Box
-  const input = document.getElementById('addressInput');
-  const searchBox = new google.maps.places.SearchBox(input);
-
-  document.getElementById('searchButton').addEventListener('click', function() {
-    const places = searchBox.getPlaces();
-    
-    if (places.length === 0) return;
-
-    const place = places[0];
-    
-    if (!place.geometry) return;
-
-    if (place.geometry.viewport) {
-        map.fitBounds(place.geometry.viewport);
+function geocodeAddress(geocoder, resultsMap) {
+  const address = document.getElementById("addressInput").value;
+  geocoder.geocode({ address: address }, (results, status) => {
+    if (status === "OK") {
+      resultsMap.setCenter(results[0].geometry.location);
+      new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location,
+      });
     } else {
-        map.setCenter(place.geometry.location);
-        map.setZoom(17);
+      alert("Geocode was not successful for the following reason: " + status);
     }
   });
 }

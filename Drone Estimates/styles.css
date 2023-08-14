@@ -27,7 +27,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     font-size: 16px;
-    border: 1px solid #ccd0d5;
+    border: 2px solid #ccd0d5;
   }
   
   #searchButton {
@@ -50,39 +50,46 @@ body {
     margin-bottom: 15px;
   }
   
-  #contactFormContainer {
+  #estimateFormContainer {
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
   }
   
-  #contactForm {
+  #estimateForm .row {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   
-  #contactForm label,
-  #contactForm input {
+  #estimateForm label,
+  #estimateForm input,
+  #estimateForm select,
+  #estimateForm .checkbox-group {
+    width: 48%;
     margin-bottom: 10px;
   }
   
-  #contactForm input[type="text"],
-  #contactForm input[type="email"],
-  #contactForm input[type="tel"] {
+  #estimateForm input[type="text"],
+  #estimateForm input[type="email"],
+  #estimateForm input[type="tel"],
+  #estimateForm input[type="datetime-local"],
+  #estimateForm select {
     padding: 10px;
-    border: 1px solid #ccd0d5;
+    border: 2px solid #ccd0d5;
   }
   
-  #contactForm input[type="submit"] {
+  #estimateForm input[type="submit"] {
     padding: 10px;
     background-color: #1877f2;
     color: white;
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: 100%;
   }
   
-  #contactForm input[type="submit"]:hover {
+  #estimateForm input[type="submit"]:hover {
     background-color: #155a8a;
   }
   

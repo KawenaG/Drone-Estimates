@@ -8,11 +8,18 @@
     </style>
 </head>
 <body>
+    <!-- Header with search bar-->
     <div class="container">
         <h1>Draw a Grid on the Property</h1>
-        <input id="addressInput" type="text" placeholder="Search for address">
+        <div id="searchBar">
+            <input id="addressInput" type="text" placeholder="Search for address">
+            <button id="searchButton">Search</button>
+        </div>
         <div id="map"></div>
         <p id="area">Area: 0 sq feet</p>
+    </div>    
+<!-- Form Fields -->
+    <div id="contactFormContainer">
         <form id="contactForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>

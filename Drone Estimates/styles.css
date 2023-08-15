@@ -1,95 +1,87 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f6f7;
-    color: #1d2129;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    color: #1877f2;
-  }
-  
-  #searchBar {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  #addressInput {
-    width: 80%;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    border: 2px solid #ccd0d5;
-  }
-  
-  #searchButton {
-    padding: 10px;
-    background-color: #1877f2;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    width: 150px;
-  }
-  
-  #searchButton:hover {
-    background-color: #155a8a;
-  }
-  
-  #map {
-    height: 400px;
-    border: 1px solid #ccd0d5;
-    margin-bottom: 15px;
-  }
-  
-  #estimateFormContainer {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  
-  #estimateForm .row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  #estimateForm label,
-  #estimateForm input,
-  #estimateForm select,
-  #estimateForm .checkbox-group {
-    width: 48%;
-    margin-bottom: 10px;
-  }
-  
-  #estimateForm input[type="text"],
-  #estimateForm input[type="email"],
-  #estimateForm input[type="tel"],
-  #estimateForm input[type="datetime-local"],
-  #estimateForm select {
-    padding: 10px;
-    border: 2px solid #ccd0d5;
-  }
-  
-  #estimateForm input[type="submit"] {
-    padding: 10px;
-    background-color: #1877f2;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    width: 100%;
-  }
-  
-  #estimateForm input[type="submit"]:hover {
-    background-color: #155a8a;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f5f6f7;
+  color: #1d2129;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #1877f2;
+}
+
+#searchBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#addressInput {
+  width: 80%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccd0d5;
+}
+
+#searchButton {
+  padding: 10px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 150px;
+}
+
+#searchButton:hover {
+  background-color: #155a8a;
+}
+
+#map {
+  height: 400px;
+  border: 1px solid #ccd0d5;
+  margin-bottom: 15px;
+}
+
+#contactFormContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#contactForm label,
+#contactForm input {
+  margin-bottom: 10px;
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm input[type="tel"] {
+  padding: 10px;
+  border: 1px solid #ccd0d5;
+}
+
+#contactForm input[type="submit"] {
+  padding: 10px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contactForm input[type="submit"]:hover {
+  background-color: #155a8a;
+}

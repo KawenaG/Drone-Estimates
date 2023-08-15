@@ -11,7 +11,6 @@
     <!-- Header with search bar-->
     <div class="container">
         <h1>Draw a Grid on the Property</h1>
-        <h2>A calculated estimate will be emailed to you</h2>
         <div id="searchBar">
             <input id="addressInput" type="text" placeholder="Search for address">
             <button id="searchButton">Search</button>
@@ -20,45 +19,18 @@
         <p id="area">Area: 0 sq feet</p>
     </div>    
 <!-- Form Fields -->
-<div id="estimateFormContainer">
-    <form id="estimateForm">
-      <div class="row">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="row">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" required>
-  
-        <label for="dateAndTime">Date and Time:</label>
-        <input type="datetime-local" id="dateAndTime" name="dateAndTime" required>
-      </div>
-      <div class="row">
-        <label for="serviceType">Type of Service:</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="serviceType" value="Aerial Photography/Videography"> Aerial Photography/Videography</label>
-          <label><input type="checkbox" name="serviceType" value="Aerial Mapping"> Aerial Mapping</label>
-          <label><input type="checkbox" name="serviceType" value="Aerial Inspection"> Aerial Inspection</label>
-          <label><input type="checkbox" name="serviceType" value="3D Modeling"> 3D Modeling</label>
-        </div>
-      </div>
-      <div class="row">
-        <label for="propertyType">Type of Property:</label>
-        <select id="propertyType" name="propertyType" required>
-          <option value="residential">Residential</option>
-          <option value="commercial">Commercial</option>
-          <option value="agricultural">Agricultural</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-  
-  
+    <div id="contactFormContainer">
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <input type="hidden" id="areaInput" name="area">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     <script src="main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgy_vBhUnEUjUkfwxsaf1dPICNFDB7Mk&libraries=drawing,places&callback=initMap"></script>
 </body>

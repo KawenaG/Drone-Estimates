@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  color: #1877f2;
+  color: #000000;
 }
 
 #searchBar {
@@ -85,3 +85,35 @@ h1 {
 #contactForm input[type="submit"]:hover {
   background-color: #155a8a;
 }
+
+/* Existing styles */
+/* ... */
+
+/* Style for the checkbox group */
+.checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Style for the dropdown (select element) */
+#contactForm select {
+  padding: 10px;
+  border: 1px solid #ccd0d5;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Style for the textarea */
+#contactForm textarea {
+  padding: 10px;
+  border: 1px solid #ccd0d5;
+  width: 100%;
+  margin-bottom: 10px;
+  resize: vertical; /* Allow vertical resizing, but not horizontal */
+}
+

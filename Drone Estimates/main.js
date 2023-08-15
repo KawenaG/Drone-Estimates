@@ -1,12 +1,13 @@
 let map;
 let drawingManager;
+let existingPolygon = null; // Global variable to store existing polygon
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 37.7749, lng: -122.4194}, // Default to San Francisco, adjust as needed
+    center: {lat: 47.608013, lng: -122.335167}, // Default to San Francisco, adjust as needed
     zoom: 10,
   });
-
+  47.6062, 122.3321
   drawingManager = new google.maps.drawing.DrawingManager({
     drawingMode: google.maps.drawing.OverlayType.POLYGON,
     drawingControl: true,
@@ -23,7 +24,12 @@ function initMap() {
 
   google.maps.event.addListener(drawingManager, 'overlaycomplete', function(e) {
     if (e.type === 'polygon') {
-      let path = e.overlay.getPath();
+      if (existingPolygon) {
+        existingPolygon.setMap(null); // Remove existing polygon
+      }
+      existingPolygon = e.overlay; // Store new polygon
+
+      let path = existingPolygon.getPath();
       let areaInMeters = google.maps.geometry.spherical.computeArea(path);
       let areaInFeet = areaInMeters * 10.764;
       document.getElementById('area').innerHTML = `Area: ${areaInFeet.toFixed(2)} sq feet`;

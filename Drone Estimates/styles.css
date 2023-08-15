@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  color: #000000;
+  color: #1877f2;
 }
 
 #searchBar {
@@ -24,14 +24,14 @@ h1 {
 
 #addressInput {
   width: 80%;
-  padding: 10px;
+  padding: 5px 10px; /* Reduced vertical padding */
   box-sizing: border-box;
   font-size: 16px;
   border: 1px solid #ccd0d5;
 }
 
 #searchButton {
-  padding: 10px;
+  padding: 5px 10px; /* Reduced vertical padding */
   background-color: #1877f2;
   color: white;
   border: none;
@@ -61,20 +61,42 @@ h1 {
   flex-direction: column;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Added more space between rows */
+}
+
+.col {
+  flex: 1;
+  padding: 5px 15px; /* Adjusted padding to give more horizontal space */
+}
+
 #contactForm label,
-#contactForm input {
+#contactForm input,
+#contactForm select,
+#contactForm textarea,
+#contactForm div {
   margin-bottom: 10px;
 }
 
 #contactForm input[type="text"],
 #contactForm input[type="email"],
-#contactForm input[type="tel"] {
-  padding: 10px;
+#contactForm input[type="tel"],
+#contactForm select,
+#contactForm textarea {
+  padding: 5px 10px; /* Reduced vertical padding */
   border: 1px solid #ccd0d5;
+  width: 100%;
+}
+
+#contactForm textarea {
+  resize: vertical;
 }
 
 #contactForm input[type="submit"] {
-  padding: 10px;
+  padding: 5px 10px; /* Reduced vertical padding */
   background-color: #1877f2;
   color: white;
   border: none;
@@ -85,35 +107,3 @@ h1 {
 #contactForm input[type="submit"]:hover {
   background-color: #155a8a;
 }
-
-/* Existing styles */
-/* ... */
-
-/* Style for the checkbox group */
-.checkbox-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-
-.checkbox-group input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-/* Style for the dropdown (select element) */
-#contactForm select {
-  padding: 10px;
-  border: 1px solid #ccd0d5;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-/* Style for the textarea */
-#contactForm textarea {
-  padding: 10px;
-  border: 1px solid #ccd0d5;
-  width: 100%;
-  margin-bottom: 10px;
-  resize: vertical; /* Allow vertical resizing, but not horizontal */
-}
-

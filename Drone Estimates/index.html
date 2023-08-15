@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Drone Service Estimate</title>
     <link rel="stylesheet" href="styles.css">
@@ -7,8 +8,9 @@
         /* Inline styles if needed */
     </style>
 </head>
+
 <body>
-    <!-- Header with search bar -->
+    <!-- Header with search bar-->
     <div class="container">
         <h1>Draw a Grid on the Property</h1>
         <div id="searchBar">
@@ -21,41 +23,87 @@
     <!-- Form Fields -->
     <div id="contactFormContainer">
         <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required><br><br>
-            <label for="propertyAddress">Property Address:</label>
-            <input type="text" id="propertyAddress" name="propertyAddress" required><br><br>
-            <label for="propertyType">Type of Property:</label>
-            <select id="propertyType" name="propertyType" required>
-                <option value="commercial">Commercial</option>
-                <option value="residential">Residential</option>
-                <option value="agricultural">Agricultural</option>
-                <option value="other">Other</option>
-            </select><br><br>
-            <label for="serviceType">Type of Service:</label>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="serviceType" value="Photography/Videography"> Photography/Videography</label>
-                <label><input type="checkbox" name="serviceType" value="Mapping"> Mapping</label>
-                <label><input type="checkbox" name="serviceType" value="Inspection"> Inspection</label>
-                <label><input type="checkbox" name="serviceType" value="Progress Updates"> Progress Updates</label>
-            </div><br><br>
-            <label for="preferredContact">Preferred Contact Method:</label>
-            <select id="preferredContact" name="preferredContact" required>
-                <option value="email">Email</option>
-                <option value="phone">Phone</option>
-            </select><br><br>
-            <label for="instructions">Specific Instructions or Questions:</label>
-            <textarea id="instructions" name="instructions" rows="4" cols="50"></textarea><br><br>
-            <label><input type="checkbox" id="terms" name="terms" required> I accept the Terms and Conditions</label><br><br>
+            <div class="row">
+                <div class="col">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="col">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="col">
+                    <label for="propertyAddress">Property Address:</label>
+                    <input type="text" id="propertyAddress" name="propertyAddress" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="propertyType">Property Type:</label>
+                    <select id="propertyType" name="propertyType" required>
+                        <option value="commercial">Commercial</option>
+                        <option value="residential">Residential</option>
+                        <option value="agricultural">Agricultural</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="preferredContact">Preferred Contact Method:</label>
+                    <select id="preferredContact" name="preferredContact" required>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Services:</label>
+                    <div>
+                        <input type="checkbox" id="photography" name="services" value="photography">
+                        <label for="photography">Photography/Videography</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="mapping" name="services" value="mapping">
+                        <label for="mapping">Mapping</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="inspection" name="services" value="inspection">
+                        <label for="inspection">Inspection</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="progressUpdates" name="services" value="progressUpdates">
+                        <label for="progressUpdates">Progress Updates</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="instructions">Specific Instructions and Questions:</label>
+                    <textarea id="instructions" name="instructions" rows="4" required></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+            </div>
             <input type="hidden" id="areaInput" name="area">
-            <input type="submit" value="Submit">
+            <div class="row">
+                <div class="col">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
         </form>
     </div>
     <script src="main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCgy_vBhUnEUjUkfwxsaf1dPICNFDB7Mk&libraries=drawing,places&callback=initMap"></script>
 </body>
+
 </html>
